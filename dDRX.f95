@@ -1,7 +1,7 @@
 PROGRAM dDRX
   IMPLICIT NONE
 
-  ! Variáveis reais
+  ! Variáveis reais:
   REAL :: erroexp ! Erro experimental do equipamento
   REAL :: errocorr ! Erro corrigido pelo método enviado
   REAL :: errotcom ! Valor do erro combinado do ângulo
@@ -21,11 +21,11 @@ PROGRAM dDRX
   REAL :: pi
   REAL :: teste
 
-  ! Valores iniciais
+  ! Valores iniciais:
   erroexp = 0.0075
   lambdarx = 1.540629
 
-  ! Interface com o usuário
+  ! Interface com o usuário:
   print*, "Programa - dDRX"
   print*, "-----------------------------------------"
   print*, ""
@@ -38,7 +38,7 @@ PROGRAM dDRX
   read (*,*) errocorr
   print*, ""
 
-  ! Cálculos
+  ! Cálculos:
   errotcom = SQRT(erroexp**2 + errocorr**2)
   pi = 2.0 * ASIN(1.0)
   trad = (thetagrauscorr / 2) * (pi / 180)
@@ -48,20 +48,20 @@ PROGRAM dDRX
   sentradquad = sentrad**2
   errod = (lambdarx / (2 * sentradquad)) * costrad * (errotcom * (pi / 180))
 
-  ! Interface com o usuário
+  ! Interface com o usuário:
   print*, "Quais o valor de k h l:"
   print*, ""
   read (*,*) h, k, l
   print*, ""
 
-  ! Cálculos
+  ! Cálculos:
   a = d * SQRT(h**2 + k**2 + l**2)
   erroa = errod * SQRT(h**2 + k**2 + l**2)
   peso = 1 / (erroa**2)
   apeso = a * peso
   teste = apeso / peso
 
-  ! Saída do programa
+  ! Saída do programa:
   print*, "Angulo em radianos:", trad
   print*, "Seno de teta em radianos:", sentrad
   print*, "Seno de teta em radianos ao quadrado:", sentradquad
@@ -75,6 +75,6 @@ PROGRAM dDRX
   print*, "Parametro de rede(a) x Peso do erro:", apeso
   print*, teste
 
-  ! Fechando o programa
+  ! Fechando o programa:
   read (*,*)
 END PROGRAM dDRX
