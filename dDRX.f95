@@ -1,7 +1,7 @@
 PROGRAM dDRX
   IMPLICIT NONE
 
-  ! Variáveis reais
+  ! Variáveis reais:
   REAL :: erroexp ! Erro experimental do equipamento
   REAL :: errocorr ! Erro corrigido pelo método enviado
   REAL :: errotcom ! Valor do erro combinado do ângulo
