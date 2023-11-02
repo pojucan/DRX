@@ -1,7 +1,7 @@
 PROGRAM dDRX
   IMPLICIT NONE
 
-  ! Variáveis reais
+  ! Variáveis reais:
   REAL :: erroexp ! Erro experimental do equipamento
   REAL :: errocorr ! Erro corrigido pelo método enviado
   REAL :: errotcom ! Valor do erro combinado do ângulo
@@ -18,8 +18,8 @@ PROGRAM dDRX
   REAL :: h, k, l ! Índices de Miller
   REAL :: peso ! Peso do erro do parâmetro de rede
   REAL :: apeso ! Parâmetro de rede x o peso de seu erro
-  REAL :: pi
-  REAL :: teste
+  REAL :: pi ! Valor de pi
+  REAL :: teste ! Razão
 
   ! Valores iniciais:
   erroexp = 0.0075
